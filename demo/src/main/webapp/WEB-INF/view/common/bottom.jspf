@@ -1,10 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%-- <body> 하단에 있는 navigation bar --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
-    <nav class="navbar navbar-expand-sm bg-light fixed-bottom">
-        <div class="container-fluid justify-content-center">
-            <span class="navbar-text">
-                Copyright &copy; 2023 CK World Corp. All rights reserved.
-            </span>
-        </div>
-    </nav>
+<!-- Footer-->
+<footer class="py-5 bg-dark" id="footer">
+	<div class="container px-4">
+		<p class="m-0 text-center text-white">Copyright &copy; Your
+			Website 2023</p>
+	</div>
+</footer>
+
+<!-- Bootstrap core JS-->
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core theme JS-->
+<script src="/assets/js/scripts.js"></script>
