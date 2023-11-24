@@ -12,16 +12,16 @@ CREATE TABLE Rent
 (
 	-- rent date
 	rent_date varchar2(20),
-	rent_no varchar2(10),
+	rent_no number(10),
 	station_name varchar2(50),
 	rent_code varchar2(10),
-	sex varchar2(10),
+	sex number(10),
 	age varchar2(20),
-	use_no varchar2(10),
-	exer_amount varchar2(20),
-	carbon_amount varchar2(20),
-	moving_length varchar2(20),
-	usage_time varchar2(10)
+	use_no number(10),
+	exer_amount number(20),
+	carbon_amount number(20),
+	moving_length number(20),
+	usage_time number(10)
 );
 
 
