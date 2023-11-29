@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.db.UserDaoOracle;
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserByMonth;
 
 // DI 이용 annotation, 나중에 Service 바뀌면 바꿔줌
 @Service
@@ -60,6 +61,12 @@ public class UserServiceOracleImpl implements UserService {
 		} else {
 			return WRONG_PASSWORD;
 		}
+	}
+
+	@Override
+	public List<UserByMonth> getNumberOfUser() {
+		List<UserByMonth> monthList = userDao.getNumberOfUser();
+		return monthList;
 	}
 
 }

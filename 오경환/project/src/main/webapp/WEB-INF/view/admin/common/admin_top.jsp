@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
      <!-- Navbar Brand-->
@@ -18,10 +18,12 @@
          <li class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                 <li><a class="dropdown-item" href="#!">Settings</a></li>
-                 <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                 <li><hr class="dropdown-divider" /></li>
-                 <li><a class="dropdown-item" href="#!">Logout</a></li>
+                <c:if test="${not empty sessUid}">
+                <li><a class="dropdown-item" href="/demo/user/logout">Logout</a></li>
+                </c:if>
+                <c:if test="${empty sessUid}">
+                 <li><a class="dropdown-item" href="/demo/user/login">Login</a></li>
+                </c:if>
              </ul>
          </li>
      </ul>

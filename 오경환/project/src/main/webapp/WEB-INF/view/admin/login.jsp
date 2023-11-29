@@ -34,12 +34,11 @@
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="/demo/admin/password">패스워드 변경</a>
                                                 <input class="btn btn-primary" type="submit" value="로그인">
-                                                <input class="btn btn-secondary" type="reset" value="취소">
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="/demo/admin/register">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="/demo/user/register">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>

@@ -8,12 +8,17 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserByMonth;
 
 @Mapper
 public interface UserDaoOracle {
 	
 	@Select("select count(uname) from users where isDeleted=0")
 	public int getUserCount();
+	
+	@Select("select to_number(to_char(regdate, 'mm')) as month, count(*) as cnt from users "
+			+ "group by to_char(regdate, 'mm') order by month")
+	public List<UserByMonth> getNumberOfUser();
 	
 	// \" escape 문자로 oracle에서는 uid 쓰고 있어 "uid"로
 	// MyBatis에서만 사용 가능 / JPA 요즘

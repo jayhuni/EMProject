@@ -3,6 +3,7 @@ package com.example.demo.service;
 import java.util.List;
 
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserByMonth;
 
 // interface 사용 이유 : Release하는 회사마다 DB가 다름 ex) Oracle, MySQL
 // UserServiceOracleImpl.java를 호출
@@ -18,6 +19,8 @@ public interface UserService {
 	int getUserCount();		// pagination을 위해 사용됨 / 전체 사용자 찾음
 	
 	User getUser(String uid);
+	
+	List<UserByMonth> getNumberOfUser();
 	
 	List<User> getUserList(int page);		// 사용자를 페이지로 찾아냄
 	

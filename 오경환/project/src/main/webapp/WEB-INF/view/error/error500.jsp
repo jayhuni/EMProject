@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isErrorPage="true" %>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,8 +20,13 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="text-center mt-4">
-                                    <img class="mb-4 img-error" src="/demo/assets/img/error-404-monochrome.svg" />
-                                    <p class="lead">This requested URL was not found on this server.</p>
+                                    <h1 class="display-1">에러페이지</h1>
+                                    <p class="lead">죄송합니다.</p>
+                                    <p>원인 모를 오류가 발생하였습니다.</p>
+                                    <p>잠시후 다시 시도해 보세요.</p>
+                                    <p>${code}</p>
+                                    <p>${msg}</p>
+                                    <p>${timestamp}</p>
                                     <a href="/demo/admin/index">
                                         <i class="fas fa-arrow-left me-1"></i>
                                         Return to Dashboard
@@ -31,7 +37,7 @@
                     </div>
                 </main>
             </div>
-            <%@ include file="common/admin_bottom.jsp"%>
+            <%@ include file="../admin/common/admin_bottom.jsp"%>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="/demo/assets/js/adminScripts.js"></script>

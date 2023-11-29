@@ -1,10 +1,12 @@
 package com.example.demo.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +19,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserByMonth;
 import com.example.demo.service.UserService;
 
 @Controller
-@RequestMapping("/user")		// /sample/user로 routing
+@RequestMapping("/user")
 public class UserController {
 	@Autowired private UserService userService;
 	
@@ -70,7 +73,7 @@ public class UserController {
 		model.addAttribute("userList", list);
 		
 		int totalUsers = userService.getUserCount();
-		int totalPages = (int) Math.ceil((double)totalUsers / userService.RECORDS_PER_PAGE);
+		int totalPages = (int) Math.ceil((double)totalUsers / UserService.RECORDS_PER_PAGE);
 		List<String> pageList = new ArrayList<>();
 		for (int i=1; i<=totalPages; i++)
 			pageList.add(String.valueOf(i));
@@ -78,7 +81,22 @@ public class UserController {
 		session.setAttribute("currentUserPage", page);
 		model.addAttribute("menu", "user");
 		
-		return "user/list";
+		List<UserByMonth> monthList = userService.getNumberOfUser();
+		JSONArray jsonArray = new JSONArray();
+		
+		Iterator<UserByMonth> it = monthList.iterator();
+		while(it.hasNext()) {
+			UserByMonth userMonth = it.next();
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("month", userMonth.getMonth());
+			jsonObject.put("numberOfPerson", userMonth.getNumberOfPerson());
+			
+			jsonArray.add(jsonObject);
+		}
+		System.out.println(jsonArray);
+		model.addAttribute("json", jsonArray.toJSONString());
+		
+		return "admin/list";
 	}
 	
 	@GetMapping("/login")
