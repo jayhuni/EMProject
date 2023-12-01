@@ -9,7 +9,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Register - SB Admin</title>
-        <link href="/demo/assets/css/stylesA.css" rel="stylesheet" />
+        <link href="/project/assets/css/stylesA.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
@@ -22,7 +22,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">사용자 등록</h3></div>
                                     <div class="card-body">
-                                        <form action="/demo/user/register" method="post">
+                                        <form action="/project/user/register" method="post">
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputId" name="uid" type="text" placeholder="아이디을 입력하세요">
                                                 <label for="inputId">ID</label>
@@ -55,7 +55,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="/demo/admin/login">로그인</a></div>
+                                        <div class="small"><a href="/project/admin/login">로그인</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -68,6 +68,6 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="/demo/assets/js/adminScripts.js"></script>
+        <script src="/project/assets/js/adminScripts.js"></script>
     </body>
 </html>

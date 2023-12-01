@@ -9,7 +9,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Charts - SB Admin</title>
-        <link href="/demo/assets/css/stylesA.css" rel="stylesheet" />
+        <link href="/project/assets/css/stylesA.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -23,7 +23,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Charts</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="/demo/admin/index">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/project/admin/index">Dashboard</a></li>
                             <li class="breadcrumb-item active">Charts</li>
                         </ol>
                         <div class="card mb-4">
@@ -69,10 +69,10 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="/demo/assets/js/adminScripts.js"></script>
+        <script src="/project/assets/js/adminScripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="/demo/assets/demo/chart-area-demo.js"></script>
-        <script src="/demo/assets/demo/chart-bar-demo.js"></script>
-        <script src="/demo/assets/demo/chart-pie-demo.js"></script>
+        <script src="/project/assets/demo/chart-area-demo.js"></script>
+        <script src="/project/assets/demo/chart-bar-demo.js"></script>
+        <script src="/project/assets/demo/chart-pie-demo.js"></script>
     </body>
 </html>

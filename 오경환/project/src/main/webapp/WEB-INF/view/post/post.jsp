@@ -9,9 +9,9 @@
         <meta name="author" content="" />
         <title>Blog Post - Start Bootstrap Template</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="/demo/assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/project/assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="/demo/assets/css/post_styles.css" rel="stylesheet" />
+        <link href="/project/assets/css/post_styles.css" rel="stylesheet" />
         <!-- jquery, fontawesome, Bootstrap link -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
@@ -154,6 +154,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="/demo/assets/js/post_scripts.js"></script>
+        <script src="/project/assets/js/post_scripts.js"></script>
     </body>
 </html>

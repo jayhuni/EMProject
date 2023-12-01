@@ -9,7 +9,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Password Reset - SB Admin</title>
-        <link href="/demo/assets/css/stylesA.css" rel="stylesheet" />
+        <link href="/project/assets/css/stylesA.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
@@ -29,13 +29,13 @@
                                                 <label for="inputEmail">Email address</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="/demo/admin/login">Return to login</a>
-                                                <a class="btn btn-primary" href="/demo/admin/login">Reset Password</a>
+                                                <a class="small" href="/project/admin/login">Return to login</a>
+                                                <a class="btn btn-primary" href="/project/admin/login">Reset Password</a>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="/demo/admin/register">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="/project/admin/register">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -48,6 +48,6 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="/demo/assets/js/adminScripts.js"></script>
+        <script src="/project/assets/js/adminScripts.js"></script>
     </body>
 </html>

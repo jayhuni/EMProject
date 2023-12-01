@@ -116,15 +116,15 @@ public class UserController {
 			
 			// 환영 메세지
 			model.addAttribute("msg", user.getUname() + "님 환영합니다.");
-			model.addAttribute("url", "/demo/admin/index");			
+			model.addAttribute("url", "/project/admin/index");			
 			
 		} else if (result == UserService.WRONG_PASSWORD) {
 			model.addAttribute("msg", "패스워드 입력이 잘못 되었습니다.");
-			model.addAttribute("url", "/demo/user/login");
+			model.addAttribute("url", "/project/user/login");
 			
 		} else {		// UID_NOT_EXIST
 			model.addAttribute("msg", "ID 입력이 잘못 되었습니다.");
-			model.addAttribute("url", "/demo/user/login");
+			model.addAttribute("url", "/project/user/login");
 		}
 		return "admin/common/alertMsg";
 	}
@@ -146,7 +146,7 @@ public class UserController {
 		// uid 중복 확인
 		if (userService.getUser(uid) != null) {
 			model.addAttribute("msg", "사용자 ID가 중복되었습니다.");
-			model.addAttribute("url", "/demo/user/register");
+			model.addAttribute("url", "/project/user/register");
 		}
 		
 		if (pwd.equals(pwd2) && pwd.length() >= 4) {		// pwd와 pwd2가 같고, 길이가 4이상면
@@ -154,10 +154,10 @@ public class UserController {
 			User user = new User(uid, hashedPwd, uname, email);
 			userService.insertUser(user);
 			model.addAttribute("msg", "등록을 맞췄습니다. 로그인 하세요.");
-			model.addAttribute("url", "/demo/user/login");
+			model.addAttribute("url", "/project/user/login");
 		} else {
 			model.addAttribute("msg", "패스워드 입력이 잘못 되었습니다.");
-			model.addAttribute("url", "/demo/user/register");
+			model.addAttribute("url", "/project/user/register");
 		}
 		return "admin/common/alertMsg";
 	}

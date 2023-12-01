@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,35 +18,23 @@
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <style>
-            th, td	{ text-align: center; }
-            .disabled-link	{ pointer-events: none; }
+            th { text-align: center; width: 2%; background-color: dimgray; height: 50px; }
+            td { height: 50px; text-align: center; }
         </style>
         <script>
-            function updateFunc(uid){
-                $.ajax({
-                    type: 'GET',
-                    url: '/project/user/update/' + uid,
-                    success: function(result){
-                        let user = JSON.parse(result);
-                        $('#uid').val(user.uid);
-                        $('#uname').val(user.uname);
-                        $('#email').val(user.email);
-                        $('#updateModal1').modal('show');
-                    }
-                });
-            }
-        // 3) delUid
-            function deleteFunc(uid) {
-                $('#delUid').val(uid);
-                $('#deleteModal').modal('show');
-            }
+            function search(){
+                let field = document.getElementById('field').value;
+                let query = document.getElementById('query').value;
+                // console.log("search()", field, query);
+                location.href = '/project/blog/list?f=' + field + '&q=' + query;
+            }    	
         </script>
     </head>
     <body class="sb-nav-fixed">
-        <%@ include file="common/admin_top.jsp"%>
+        <%@ include file="../common/admin_top.jsp"%>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                <%@ include file="common/admin_aside.jsp"%>
+                <%@ include file="../common/admin_aside.jsp"%>
             </div>
             <div id="layoutSidenav_content">
                 <main>
@@ -80,69 +70,58 @@
                                 회원 목록
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>번호</th>
-                                            <th>UID</th>
-                                            <th>이름</th>
-                                            <th>이메일</th>
-                                            <th>가입일</th>
-                                            <th>액션</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>번호</th>
-                                            <th>UID</th>
-                                            <th>이름</th>
-                                            <th>이메일</th>
-                                            <th>가입일</th>
-                                            <th>액션</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                    <c:forEach var="user" items="${userList}" varStatus="loop">
-                                        <tr>
-                                            <td>${loop.count}</td>
-                                            <td>${user.uid}</td>
-                                            <td>${user.uname}</td>
-                                            <td>${user.email}</td>
-                                            <td>${user.regDate}</td>
-                                            <td>
-                                                <!-- 본인만이 수정 권한이 있음 -->
-                                                <c:if test="${sessUid eq user.uid}">
-                                                    <a href="javascript:updateFunc('${user.uid}')"><i class="fa-solid fa-user-pen me-2"></i></a>
-                                                </c:if>
-                                                <c:if test="${sessUid ne user.uid}">
-                                                    <a href="#" class="disabled-link"><i class="fa-solid fa-user-pen me-2"></i></a>
-                                                </c:if>
-                                                <!-- 관리자만이 삭제 권한이 있음 -->
-                                                <c:if test="${sessUid eq 'admin'}">
-                                                <!-- 2) delUid -->
-                                                    <a href="javascript:deleteFunc('${user.uid}')"><i class="fa-solid fa-user-minus"></i></a>
-                                                </c:if>
-                                                <c:if test="${sessUid ne 'admin'}">
-                                                    <a href="#" class="disabled-link"><i class="fa-solid fa-user-minus"></i></a>
-                                                </c:if>
-                                            </td>
-                                        </tr>
-                                    </c:forEach>
-                                    </tbody>
+                                <table class="table table-sm table-borderless">
+                                    <tr>
+                                        <td style="width: 52%; text-align: left;">
+                                            <h3>
+                                                <strong>회원 목록</strong>
+                                                <span style="font-size: 0.6em;">
+                                                    <a href="/project/blog/write">
+                                                        <i class="ms-5 fa-regular fa-file-lines"></i> 글쓰기
+                                                    </a>
+                                                </span>
+                                            </h3>						
+                                        </td>
+                                        <td style="width: 15%;">
+                                            <select class="form-select" id="field">
+                                                <option value="title" ${field eq 'title' ? 'selected' : ''}>제목</option>
+                                                <option value="content" ${field eq 'content' ? 'selected' : ''}>본문</option>
+                                                <option value="penName" ${field eq 'penName' ? 'selected' : ''}>필명</option>
+                                            </select>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <input class="form-control" placeholder="검색할 내용" id="query" value="${query}"
+                                                    onkeyup="if(window.event.keyCode==13) search()"> <%-- Key Up시 13 엔터키 --%>
+                                        </td>
+                                        <td style="width: 8%;">
+                                            <button class="btn btn-outline-primary" onclick="search()">검색</button>
+                                        </td>
+                                    </tr>
                                 </table>
-                                <ul class="pagination mt-3 justify-content-center">
-                                    <c:forEach var="page" items="${pageList}">
-                                        <li class="page-item ${(currentUserPage eq page) ? 'active' : ''}">
-                                            <a class="page-link" href="/project/user/list/${page}">${page}</a>
-                                        </li>
-                                    </c:forEach>
-                                </ul>
-                                <input type="hidden" id="delUid">
+                                <hr>
+                                <table class="table table-striped">
+                                    <tr class="table-secondary">
+                                        <th style="width: 8%">ID</th>
+                                        <th style="width: 14%">필명</th>
+                                        <th style="width: 50%">제목</th>
+                                        <th style="width: 20%">작성시간</th>
+                                        <th style="width: 10%">조회수</th>
+                                    </tr>
+                                <c:forEach var="blog" items="${blogList}">
+                                    <tr>					
+                                        <td>${blog.bid}</td>
+                                        <td>${blog.penName}</td>
+                                        <td><a href="/project/blog/detail/${blog.bid}"> ${blog.title} </a></td>
+                                        <td>${fn:replace(fn:substring(blog.modTime, 2, 16), 'T', ' ')}</td>
+                                        <td>${blog.viewCount}</td>
+                                    </tr>
+                                </c:forEach>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </main>
-                <%@ include file="common/admin_bottom.jsp"%>
+                <%@ include file="../common/admin_bottom.jsp"%>
                 <div class="modal" id="updateModal1">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -208,15 +187,7 @@
         </div>
         <script src="/project/assets/js/adminScripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="/project/assets/chart/userChartBar.js"></script>
-        <script src="/project/assets/chart/userAreaChart.js"></script>
-        <script>
-            let jsonData = ${json};
-            loadChartWithData(jsonData);
-            userAreaProc(jsonData);
-        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-        <script src="/project/assets/js/datatables-simple-demo.js"></script>
     </body>
 </html>

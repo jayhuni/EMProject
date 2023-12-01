@@ -9,7 +9,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Static Navigation - SB Admin</title>
-        <link href="/demo/assets/css/stylesA.css" rel="stylesheet" />
+        <link href="/project/assets/css/stylesA.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -23,7 +23,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Static Navigation</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="/demo/admin/index">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/project/admin/index">Dashboard</a></li>
                             <li class="breadcrumb-item active">Static Navigation</li>
                         </ol>
                         <div class="card mb-4">
@@ -45,6 +45,6 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="/demo/assets/js/adminScripts.js"></script>
+        <script src="/project/assets/js/adminScripts.js"></script>
     </body>
 </html>

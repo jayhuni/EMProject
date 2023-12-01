@@ -8,7 +8,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>404 Error - SB Admin</title>
-        <link href="/demo/assets/css/stylesA.css" rel="stylesheet" />
+        <link href="/project/assets/css/stylesA.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -19,12 +19,12 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="text-center mt-4">
-                                    <img class="mb-4 img-error" src="/demo/assets/img/error-404-monochrome.svg" />
+                                    <img class="mb-4 img-error" src="/project/assets/img/error-404-monochrome.svg" />
                                     <p class="lead">This requested URL was not found on this server.</p>
                                     <p>${code}</p>
                                     <p>${msg}</p>
                                     <p>${timestamp}</p>
-                                    <a href="/demo/admin/index">
+                                    <a href="/project/admin/index">
                                         <i class="fas fa-arrow-left me-1"></i>
                                         Return to Dashboard
                                     </a>
@@ -37,6 +37,6 @@
             <%@ include file="../admin/common/admin_bottom.jsp"%>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="/demo/assets/js/adminScripts.js"></script>
+        <script src="/project/assets/js/adminScripts.js"></script>
     </body>
 </html>

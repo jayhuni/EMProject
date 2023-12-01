@@ -9,7 +9,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Login - SB Admin</title>
-        <link href="/demo/assets/css/stylesA.css" rel="stylesheet" />
+        <link href="/project/assets/css/stylesA.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
@@ -22,7 +22,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                        <form action="/demo/user/login" method="post">
+                                        <form action="/project/user/login" method="post">
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="uid" name="uid" type="text" placeholder="ID" />
                                                 <label for="uid">사용자 ID</label>
@@ -32,13 +32,13 @@
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="/demo/admin/password">패스워드 변경</a>
+                                                <a class="small" href="/project/admin/password">패스워드 변경</a>
                                                 <input class="btn btn-primary" type="submit" value="로그인">
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="/demo/user/register">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="/project/user/register">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -51,6 +51,6 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="/demo/assets/js/adminScripts.js"></script>
+        <script src="/project/assets/js/adminScripts.js"></script>
     </body>
 </html>
