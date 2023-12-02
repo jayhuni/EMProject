@@ -41,10 +41,10 @@
         </script>
     </head>
     <body class="sb-nav-fixed">
-        <%@ include file="common/admin_top.jsp"%>
+        <%@ include file="../common/admin_top.jsp"%>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                <%@ include file="common/admin_aside.jsp"%>
+                <%@ include file="../common/admin_aside.jsp"%>
             </div>
             <div id="layoutSidenav_content">
                 <main>
@@ -142,7 +142,7 @@
                         </div>
                     </div>
                 </main>
-                <%@ include file="common/admin_bottom.jsp"%>
+                <%@ include file="../common/admin_bottom.jsp"%>
                 <div class="modal" id="updateModal1">
                     <div class="modal-dialog">
                         <div class="modal-content">

@@ -19,7 +19,7 @@ public interface BlogDaoOracle {
 			+ " order by modTime desc")
 	List<Blog> getBlogList(String field, String query);
 	
-	@Insert("insert into blog(penName, title, content) values (#{penName}, #{title}, #{content, jdbcType=VARCHAR})")
+	@Insert("insert into blog(penName, title, content, \"uid\") values (#{penName}, #{title}, #{content, jdbcType=VARCHAR}, #{uid})")
 	void insertBlog(Blog blog);
 		
 	@Update("update blog set penName = #{penName}, title = #{title}, content = #{content, jdbcType=VARCHAR}, "

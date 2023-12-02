@@ -13,10 +13,10 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <%@ include file="common/admin_top.jsp"%>
+        <%@ include file="../common/admin_top.jsp"%>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                <%@ include file="common/admin_aside.jsp"%>
+                <%@ include file="../common/admin_aside.jsp"%>
             </div>
             <div id="layoutSidenav_content">
                 <main>
@@ -41,7 +41,7 @@
                         <div class="card mb-4"><div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div></div>
                     </div>
                 </main>
-                <%@ include file="common/admin_bottom.jsp"%>
+                <%@ include file="../common/admin_bottom.jsp"%>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

@@ -39,49 +39,16 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">회원목록</h1>
+                        <h1 class="mt-4">게시판</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">회원목록</li>
+                            <li class="breadcrumb-item active">게시판 목록</li>
+                            <li class="breadcrumb-item"><a href="/project/blog/write">글쓰기</a></li>
                         </ol>
-                        
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        월별 회원 가입수
-                                    </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        월별 회원 가입수
-                                    </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                회원 목록
-                            </div>
                             <div class="card-body">
                                 <table class="table table-sm table-borderless">
                                     <tr>
-                                        <td style="width: 52%; text-align: left;">
-                                            <h3>
-                                                <strong>회원 목록</strong>
-                                                <span style="font-size: 0.6em;">
-                                                    <a href="/project/blog/write">
-                                                        <i class="ms-5 fa-regular fa-file-lines"></i> 글쓰기
-                                                    </a>
-                                                </span>
-                                            </h3>						
-                                        </td>
+                                        <td style="width: 52%; text-align: left;"></td>
                                         <td style="width: 15%;">
                                             <select class="form-select" id="field">
                                                 <option value="title" ${field eq 'title' ? 'selected' : ''}>제목</option>
@@ -122,67 +89,6 @@
                     </div>
                 </main>
                 <%@ include file="../common/admin_bottom.jsp"%>
-                <div class="modal" id="updateModal1">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">사용자 수정</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="/project/user/update" method="post">
-                                    <table class="table table-borderless">
-                                        <tr>
-                                            <td style="width:35%"><label class="col-form-label">사용자 ID</label></td>
-                                            <!-- disabled : 바뀌지 않게, 서버로 가지 않음 -->
-                                            <td style="width:65%"><input type="text" id="uid" class="form-control" disabled></td>
-                                        </tr>
-                                        <tr>
-                                            <td><label class="col-form-label">패스워드</label></td>
-                                            <td><input type="password" name="pwd" class="form-control"></td>
-                                        </tr>
-                                        <tr>
-                                            <td><label class="col-form-label">패스워드 확인</label></td>
-                                            <td><input type="password" name="pwd2" class="form-control"></td>
-                                        </tr>
-                                        <tr>
-                                            <td><label class="col-form-label">이름</label></td>
-                                            <td><input type="text" name="uname" id="uname" class="form-control"></td>
-                                        </tr>
-                                        <tr>
-                                            <td><label class="col-form-label">이메일</label></td>
-                                            <td><input type="text" name="email" id="email" class="form-control"></td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2" style="text-align: center;">
-                                                <input class="btn btn-primary" type="submit" value="수정">
-                                                <input class="btn btn-secondary ms-1" type="reset" value="취소">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal" id="deleteModal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">사용자 삭제</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-                                <strong>삭제하시겠습니까?</strong>
-                                <div class="text-center mt-5">
-                                <!-- 4) delUid -->
-                                    <button class="btn btn-danger" onclick="location.href='/project/user/delete/'+$('#delUid').val()">삭제</button>
-                                    <button class="btn btn-secondary ms-1" data-bs-dismiss="modal">취소</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>	
             </div>
         </div>
         <script src="/project/assets/js/adminScripts.js"></script>

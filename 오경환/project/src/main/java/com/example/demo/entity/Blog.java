@@ -21,12 +21,11 @@ public class Blog {
 		this.uid = uid;
 	}
 	// Update하는 경우 사용되는 생성자
-	public Blog(int bid, String penName, String title, String content, String uid) {
+	public Blog(int bid, String penName, String title, String content) {
 		this.bid = bid;
 		this.penName = penName;
 		this.title = title;
 		this.content = content;
-		this.uid = uid;
 	}
 	
 	public Blog(int bid, String penName, String title, String content, LocalDateTime modTime, int viewCount,

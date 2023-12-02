@@ -37,7 +37,7 @@
                     </div>
                 </main>
             </div>
-            <%@ include file="../admin/common/admin_bottom.jsp"%>
+            <%@ include file="../common/admin_bottom.jsp"%>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="/project/assets/js/adminScripts.js"></script>

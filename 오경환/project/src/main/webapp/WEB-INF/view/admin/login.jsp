@@ -47,7 +47,7 @@
                 </main>
             </div>
             <div id="layoutAuthentication_footer">
-                <%@ include file="common/admin_bottom.jsp"%>
+                <%@ include file="../common/admin_bottom.jsp"%>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
